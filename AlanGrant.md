@@ -1,3 +1,4 @@
+'''javascript
 public class AlanGrant extends Enemy{
        
 private int hp;
@@ -38,3 +39,4 @@ private String name;
         }
     } 
 }
+'''
