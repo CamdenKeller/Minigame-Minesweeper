@@ -1,0 +1,64 @@
+public class JackieChan extends Enemy{
+    
+private int hp;
+private String name;
+    
+    public JackieChan(){
+        hp = 80;
+        name = "Jackie Chan";
+    }
+    
+    public void loseHp(int x){
+    hp -= x;
+        if(hp<0)
+        hp = 0;
+    }
+    
+    public int getHp(){
+        return hp;
+    }
+    
+    public String getName(){
+    return name;
+    }
+    
+    public void showHp(){
+        System.out.println(name+"'s hp: "+hp);
+    }
+    
+    public void move(Player a){
+        int n = (int) (Math.random()*3);
+        int m = (int) (Math.random()*3);
+        int r = (int) (Math.random()*10);
+        if(n==0){
+        if(m>0){
+        System.out.println("Jackie Chan kicks you in the chest. You lose 50 hp.");
+        a.loseHp(50);
+        }
+        else
+        {
+        System.out.println("Jackie Chan attempted to kick you but he fell down.");
+        }
+        }
+        if(n==1){
+        if(r>2){
+        System.out.println("Jackie Chan attempts a kill punch and fails.");
+        }
+        else
+        {
+        System.out.println("Jackie Chan successfully lands a kill punch.");
+        a.loseHp(101);
+        }
+        }
+        if(n==2){
+        if(m>0){
+        System.out.println("Jackie Chan does a karate chop. You lose 25 hp.");
+        a.loseHp(25);
+        }
+        else
+        {
+        System.out.println("Jackie Chan attempted a karate chop but missed.");
+        }
+        }
+    }
+}
